@@ -12,6 +12,7 @@ Once I applied the next configuration, I can manage the raspberry with my laptop
 - [Change locale](change-locale).
 - [Change keyboard layout](chnage-keyboard-layout).
 - [Change time zone](change-time-zone).
+- [Default user](default-user).
 
 
 ### Change locale
@@ -25,3 +26,24 @@ Type: `sudo dpkg-reconfigure keyboard-configuration`
 ### Change time zone
 
 Type: `sudo dpkg-reconfigure tzdata`
+
+
+### Default user
+Before connect the machine to internet, you must add a user and delete the default. If want to keep the pi user, just change the password typing `passwd`.
+
+Add new user:
+`sudo adduser carlos`
+
+Add to sudoers:
+`sudo visudo`
+
+Bellow `root` add `carlos   ALL = NOPASSWD: ALL`
+```
+# User privilege specification
+root  ALL=(ALL:ALL) ALL
+carlos   ALL = NOPASSWD: ALL
+```
+
+Logout the actual session: `logout`.
+
+Delete `pi` user: `sudo userdel -r pi`.
