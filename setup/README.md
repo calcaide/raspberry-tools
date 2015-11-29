@@ -14,6 +14,7 @@ Once I applied the next configuration, I can manage the raspberry with my laptop
 - [Change time zone](change-time-zone).
 - [Default user](default-user).
 - [Configure ethernet](configure-ethernet).
+- [Configure SSH access](configure-ssh-access).
 
 
 ### Change locale
@@ -63,3 +64,22 @@ address 192.168.1.6
 netmask 255.255.255.0
 gateway 192.168.1.1
 ```
+
+### Configure SSH access
+
+By default the raspberry pi has the SSH server running and listening to the 22 port. Just to make sure that the service is up type: `sudo service ssh status`.
+
+*If you don't receive a response, type `sudo raspi-config` then navigate to `ssh`, and select `Enable or disable ssh server`*
+
+
+
+
+
+
+
+- - - 
+
+**References:**
+
+- [Users](https://www.raspberrypi.org/documentation/linux/usage/users.md).
+- [Ethernet](https://www.raspberrypi.org/forums/viewtopic.php?f=91&t=38825).
