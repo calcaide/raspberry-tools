@@ -13,15 +13,18 @@ Once I applied the next configuration, I can manage the raspberry with my laptop
 - [Change keyboard layout](chnage-keyboard-layout).
 - [Change time zone](change-time-zone).
 - [Default user](default-user).
+- [Configure ethernet](configure-ethernet).
 
 
 ### Change locale
 
 Type: `sudo dpkg-reconfigure locales`. Then, select your locale.
 
+
 ### Change keyboard layout
 
 Type: `sudo dpkg-reconfigure keyboard-configuration`
+
 
 ### Change time zone
 
@@ -47,3 +50,16 @@ carlos   ALL = NOPASSWD: ALL
 Logout the actual session: `logout`.
 
 Delete `pi` user: `sudo userdel -r pi`.
+
+
+### Configure ethernet
+Type: `sudo nano /etc/network/interfaces`.
+
+Replace the line `iface eth0 inet manual (or dhcp)` with:
+
+```
+iface eth0 inet static
+address 192.168.1.6
+netmask 255.255.255.0
+gateway 192.168.1.1
+```
