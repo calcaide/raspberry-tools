@@ -15,6 +15,7 @@ Once I applied the next configuration, I can manage the raspberry with my laptop
 - [Default user](default-user).
 - [Configure ethernet](configure-ethernet).
 - [Configure SSH access](configure-ssh-access).
+- [Install No-Ip](install-no-ip)
 
 
 ### Change locale
@@ -72,9 +73,47 @@ By default the raspberry pi has the SSH server running and listening to the 22 p
 *If you don't receive a response, type `sudo raspi-config` then navigate to `ssh`, and select `Enable or disable ssh server`*
 
 
+### Install No-Ip
 
+Create temporal dir (for installation files):
 
+`mkdir /home/userName/noip`
 
+`cd /home/userName/noip`
+
+Download the client and unzip it:
+
+`wget https://www.noip.com/client/linux/noip-duc-linux.tar.gz`
+
+`tar vzxf noip-duc-linux.tar.gz`
+
+Compile and install:
+
+`sudo make`
+`sudo make install`
+
+Auto runs when startup raspberry Pi:
+
+`sudo nano /etc/init.d/noip2`
+
+Basic script:
+
+```
+#! /bin/bash
+### BEGIN INIT INFO
+# Provides:             noip
+# Required-Start:       $remote_fs $syslog
+# Required-Stop:        $remote_fs $syslog
+# Default-Start:        2 3 4 5
+# Default-Stop:         0 1 6
+### END INIT INFO
+
+sudo /usr/local/bin/noip2
+```
+
+Add permissions: `sudo chmod +x /etc/init.d/noip2`
+
+Register the script to be run at start-up: `sudo update-rc.d noip2 defaults`
 
 
 - - - 
@@ -83,3 +122,5 @@ By default the raspberry pi has the SSH server running and listening to the 22 p
 
 - [Users](https://www.raspberrypi.org/documentation/linux/usage/users.md).
 - [Ethernet](https://www.raspberrypi.org/forums/viewtopic.php?f=91&t=38825).
+- [SSH access](https://www.raspberrypi.org/documentation/remote-access/ssh/README.md).
+- Install No-ip: [Post 1](http://raspberrypihelp.net/tutorials/29-raspberry-pi-no-ip-tutorial), [Post 2](http://www.stuffaboutcode.com/2012/06/raspberry-pi-run-program-at-start-up.html)
