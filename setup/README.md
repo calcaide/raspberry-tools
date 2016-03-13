@@ -9,14 +9,22 @@ Once I applied the next configuration, I can manage the raspberry with my laptop
 
 ## Contents
 
-- [Change locale](change-locale).
-- [Change keyboard layout](chnage-keyboard-layout).
-- [Change time zone](change-time-zone).
-- [Default user](default-user).
-- [Configure ethernet](configure-ethernet).
-- [Configure SSH access](configure-ssh-access).
-- [Install No-Ip](install-no-ip)
+- [Enviorment](#enviorment).
 
+- [Change locale](#change-locale).
+- [Change keyboard layout](#chnage-keyboard-layout).
+- [Change time zone](#change-time-zone).
+- [Default user](#default-user).
+- [Configure ethernet](#configure-ethernet).
+- [Configure SSH access](#configure-ssh-access).
+- [Install No-Ip](#install-no-ip)
+
+
+### Enviorment
+
+The enviorment (for now) is based in Raspbian Jessie Lite, then, depending on the purpose, I install some services or others.
+
+For setup a basic environment, should [download the Raspbian Jessie Lite image][Download Jessie Lite] and format the sd card, follow these instructions depending of your host Operating system: [Linux][Linux format SD card], [Mac Os][Mac Os format SD card] or [Windows][Windows format SD card].
 
 ### Change locale
 
@@ -45,8 +53,8 @@ Add to sudoers:
 Bellow `root` add `carlos   ALL = NOPASSWD: ALL`
 ```
 # User privilege specification
-root  ALL=(ALL:ALL) ALL
-carlos   ALL = NOPASSWD: ALL
+root    ALL=(ALL:ALL) ALL
+carlos  ALL = NOPASSWD: ALL
 ```
 
 Logout the actual session: `logout`.
@@ -119,6 +127,12 @@ Register the script to be run at start-up: `sudo update-rc.d noip2 defaults`
 - - - 
 
 **References:**
+
+- [Download Jessie Lite](https://www.raspberrypi.org/downloads/raspbian/)
+- Format SD Card
+	- [Linux format SD card](https://www.raspberrypi.org/documentation/installation/installing-images/linux.md)
+	- [Mac Os format SD card](https://www.raspberrypi.org/documentation/installation/installing-images/mac.md).
+	- [Windows format SD card](https://www.raspberrypi.org/documentation/installation/installing-images/windows.md).
 
 - [Users](https://www.raspberrypi.org/documentation/linux/usage/users.md).
 - [Ethernet](https://www.raspberrypi.org/forums/viewtopic.php?f=91&t=38825).
