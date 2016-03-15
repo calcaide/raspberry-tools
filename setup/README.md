@@ -10,12 +10,16 @@ Once I applied the next configuration, I can manage the raspberry with my laptop
 ## Contents
 
 - [Enviorment](#enviorment).
+- [Configure ethernet](#configure-ethernet).
+
+- [Default user](#default-user).
+- [Install LXDE GUI]().
 
 - [Change locale](#change-locale).
 - [Change keyboard layout](#chnage-keyboard-layout).
 - [Change time zone](#change-time-zone).
-- [Default user](#default-user).
-- [Configure ethernet](#configure-ethernet).
+
+
 - [Configure SSH access](#configure-ssh-access).
 - [Install No-Ip](#install-no-ip)
 
@@ -26,23 +30,12 @@ The enviorment (for now) is based in Raspbian Jessie Lite, then, depending on th
 
 For setup a basic environment, should [download the Raspbian Jessie Lite image][Download Jessie Lite] and format the sd card, follow these instructions depending of your host Operating system: [Linux][Linux format SD card], [Mac Os][Mac Os format SD card] or [Windows][Windows format SD card].
 
-### Change locale
+### Configure ethernet
 
-Type: `sudo dpkg-reconfigure locales`. Then, select your locale.
-
-
-### Change keyboard layout
-
-Type: `sudo dpkg-reconfigure keyboard-configuration`
-
-
-### Change time zone
-
-Type: `sudo dpkg-reconfigure tzdata`
-
+Go to [Configure ethernet](network/README.md#configure-ethernet) in network section.
 
 ### Default user
-Before connect the machine to internet, you must add a user and delete the default. If want to keep the pi user, just change the password typing `passwd`.
+Before connect the rpi to internet, you must add a user and delete the default. If want to keep the pi user, just change the password typing `passwd`.
 
 Add new user:
 `sudo adduser carlos`
@@ -59,7 +52,22 @@ carlos  ALL = NOPASSWD: ALL
 
 Logout the actual session: `logout`.
 
-Delete `pi` user: `sudo userdel -r pi`.
+Delete `pi` user: `sudo userdel -r pi`.1
+
+### Change locale
+
+Type: `sudo dpkg-reconfigure locales`. Then, select your locale.
+
+
+### Change keyboard layout
+
+Type: `sudo dpkg-reconfigure keyboard-configuration`
+
+
+### Change time zone
+
+Type: `sudo dpkg-reconfigure tzdata`
+
 
 
 ### Configure ethernet

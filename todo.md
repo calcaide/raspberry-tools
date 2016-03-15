@@ -1,14 +1,6 @@
-## COMPLETED
-- Fix anchor links issue in setup/readme.md.
-
-
 ## ToDo
-- Modify root README.
-	- Explain that this is not a guide or something like this, is just a cheat sheat, bunch of scripts or things like that, just for playing around with RPI.
 
 - Modify Setup.
-	- Environment
-		- Explaint that this cheat sheat is based on a Jessie lite.
 	- Change keyboard layout: now should link to keyboard section.
 	- Install LXDE GUI.
 		- https://www.raspberrypi.org/forums/viewtopic.php?p=890408#p890408.
