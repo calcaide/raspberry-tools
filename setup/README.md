@@ -10,7 +10,7 @@ Once I applied the next configuration, I can manage the raspberry with my laptop
 ## Contents
 
 - [Enviorment](#enviorment).
-- [Change locale, timezone and keyboard layout](#change-locale,-timezone-and-keyboard-layout)
+- [Change locale, timezone and keyboard layout](#change-locale-timezone-and-keyboard-layout)
 - [Default user](#default-user).
 - [Configure ethernet](#configure-ethernet).
 - [SSH access](#ssh-access).
