@@ -17,3 +17,8 @@ static ip_address=192.168.1.X/24
 static routers=192.168.1.1
 static domain_name_servers=192.168.1.1 8.8.8.8
 ```
+
+- - -
+
+**References:**
+- [Ethernet](https://www.raspberrypi.org/forums/viewtopic.php?p=798866#p798866).

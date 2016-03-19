@@ -10,18 +10,12 @@ Once I applied the next configuration, I can manage the raspberry with my laptop
 ## Contents
 
 - [Enviorment](#enviorment).
+- [Change locale, timezone and keyboard layout](#change-locale,-timezone-and-keyboard-layout)
 - [Default user](#default-user).
 - [Configure ethernet](#configure-ethernet).
-
-
+- [SSH access](#ssh-access).
+- [Install No-Ip](#install-no-ip).
 - [Install LXDE GUI]().
-
-- [Change locale](#change-locale).
-- [Change keyboard layout](#chnage-keyboard-layout).
-- [Change time zone](#change-time-zone).
-
-- [Configure SSH access](#configure-ssh-access).
-- [Install No-Ip](#install-no-ip)
 
 
 ### Enviorment
@@ -29,6 +23,12 @@ Once I applied the next configuration, I can manage the raspberry with my laptop
 The enviorment (for now) is based in Raspbian Jessie Lite, then, depending on the purpose, I install some services or others.
 
 For setup a basic environment, should [download the Raspbian Jessie Lite image][Download Jessie Lite] and format the sd card, follow these instructions depending of your host Operating system: [Linux][Linux format SD card], [Mac Os][Mac Os format SD card] or [Windows][Windows format SD card].
+
+
+### Change locale, timezone and keyboard layout
+
+Go to [Localisation](localisation/README.md) section to se how to [change locale](localisation/README.md#change-locale), [chane time zone](localisation/README.md#change-time-zone) or [change keyboard layout](localisation/README.md#change-keyboard-layout).
+
 
 ### Default user
 For security and other reasons I like to delete default users, but first I should to add one.
@@ -45,91 +45,21 @@ Logout the actual session:
 Delete `pi` user:
 `sudo userdel -r pi`.
 
-### Configure ethernet
-
-Go to [Configure ethernet](network/README.md#configure-ethernet) in network section.
-
-
-
-
-
-
-### Change locale
-
-Type: `sudo dpkg-reconfigure locales`. Then, select your locale.
-
-
-### Change keyboard layout
-
-Type: `sudo dpkg-reconfigure keyboard-configuration`
-
-
-### Change time zone
-
-Type: `sudo dpkg-reconfigure tzdata`
-
-
 
 ### Configure ethernet
-Type: `sudo nano /etc/network/interfaces`.
 
-Replace the line `iface eth0 inet manual (or dhcp)` with:
+Go to [Configure ethernet](network/README.md#configure-ethernet) in [network section](network/README.md).
 
-```
-iface eth0 inet static
-address 192.168.1.6
-netmask 255.255.255.0
-gateway 192.168.1.1
-```
 
-### Configure SSH access
+### SSH access
 
-By default the raspberry pi has the SSH server running and listening to the 22 port. Just to make sure that the service is up type: `sudo service ssh status`.
-
-*If you don't receive a response, type `sudo raspi-config` then navigate to `ssh`, and select `Enable or disable ssh server`*
+Go to [SSH access](remote-access.md/#ssh-access) in remote access section, also [Passwordless SSH access](remote-access.md/#ssh-access/#passwordless SSH access).
 
 
 ### Install No-Ip
 
-Create temporal dir (for installation files):
+Go to [Install No-Ip](remote-access/README.md#install-no-ip) in [remote-access](remote-access/README.md).
 
-`mkdir /home/userName/noip`
-
-`cd /home/userName/noip`
-
-Download the client and unzip it:
-
-`wget https://www.noip.com/client/linux/noip-duc-linux.tar.gz`
-
-`tar vzxf noip-duc-linux.tar.gz`
-
-Compile and install:
-
-`sudo make`
-`sudo make install`
-
-Auto runs when startup raspberry Pi:
-
-`sudo nano /etc/init.d/noip2`
-
-Basic script:
-
-```
-#! /bin/bash
-### BEGIN INIT INFO
-# Provides:             noip
-# Required-Start:       $remote_fs $syslog
-# Required-Stop:        $remote_fs $syslog
-# Default-Start:        2 3 4 5
-# Default-Stop:         0 1 6
-### END INIT INFO
-
-sudo /usr/local/bin/noip2
-```
-
-Add permissions: `sudo chmod +x /etc/init.d/noip2`
-
-Register the script to be run at start-up: `sudo update-rc.d noip2 defaults`
 
 
 - - - 
@@ -138,11 +68,7 @@ Register the script to be run at start-up: `sudo update-rc.d noip2 defaults`
 
 - [Download Jessie Lite](https://www.raspberrypi.org/downloads/raspbian/)
 - Format SD Card
-	- [Linux format SD card](https://www.raspberrypi.org/documentation/installation/installing-images/linux.md)
-	- [Mac Os format SD card](https://www.raspberrypi.org/documentation/installation/installing-images/mac.md).
-	- [Windows format SD card](https://www.raspberrypi.org/documentation/installation/installing-images/windows.md).
-
-- [Users](https://www.raspberrypi.org/documentation/linux/usage/users.md).
-- [Ethernet](https://www.raspberrypi.org/forums/viewtopic.php?f=91&t=38825).
-- [SSH access](https://www.raspberrypi.org/documentation/remote-access/ssh/README.md).
-- Install No-ip: [Post 1](http://raspberrypihelp.net/tutorials/29-raspberry-pi-no-ip-tutorial), [Post 2](http://www.stuffaboutcode.com/2012/06/raspberry-pi-run-program-at-start-up.html)
+    - [Linux format SD card](https://www.raspberrypi.org/documentation/installation/installing-images/linux.md)
+    - [Mac Os format SD card](https://www.raspberrypi.org/documentation/installation/installing-images/mac.md).
+    - [Windows format SD card](https://www.raspberrypi.org/documentation/installation/installing-images/windows.md).
+- [Add user to sudoers](http://askubuntu.com/questions/7477/how-can-i-add-a-new-user-as-sudoer-using-the-command-line)
