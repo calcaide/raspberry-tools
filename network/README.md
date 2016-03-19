@@ -5,7 +5,7 @@
 
 ### Configure ethernet
 
-*Be awre, that is just for raspbian Jessie, don't use `/etc/network/interfaces`*
+*Be aware, that is just for raspbian Jessie, don't use `/etc/network/interfaces`*
 
 Type: `sudo nano /etc/dhcpcd.conf`
 
