@@ -17,7 +17,7 @@ Absolutely based in [official documentation][Passwordless SSH access].
 
 - [Check for existing SSH keys](#check-for-existing-ssh-keys).
 - [Generate SSH keys](#generate-ssh-keys).
-- [Transfer public key from SSH client to SSH server](transfer-public-key-from-ssh-client-to-ssh-server).
+- [Transfer public key from SSH client to SSH server](#transfer-public-key-from-ssh-client-to-ssh-server).
 - [Disable password logins](#disable-password-logins).
 
 #### Check for existing SSH keys
