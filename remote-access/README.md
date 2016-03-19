@@ -93,8 +93,22 @@ Register the script to be run at start-up: `sudo update-rc.d noip2 defaults`.
 - - -
 
 **References**
-- [SSH access](https://www.raspberrypi.org/documentation/remote-access/ssh/README.md).
-[Passwordless SSH access]:[https://www.raspberrypi.org/documentation/remote-access/ssh/passwordless.md].
-[Disable password logins](http://raspberrypi.stackexchange.com/a/1687).
-[SSH config file](http://www.tldp.org/LDP/solrhe/Securing-Optimizing-Linux-RH-Edition-v1.3/chap15sec122.html).
-- Install No-ip: [Post 1](http://raspberrypihelp.net/tutorials/29-raspberry-pi-no-ip-tutorial), [Post 2](http://www.stuffaboutcode.com/2012/06/raspberry-pi-run-program-at-start-up.html)
+
+- [SSH access][SSH access]
+- [Passwordless SSH access][Passwordless SSH access]
+- [Disable password logins][Disable password logins]
+- [SSH config file][SSH config file]
+- Install No-ip: 
+	- [Post 1](http://raspberrypihelp.net/tutorials/29-raspberry-pi-no-ip-tutorial).
+	- [Post 2](http://www.stuffaboutcode.com/2012/06/raspberry-pi-run-program-at-start-up.html).
+
+
+
+
+[SSH access]: https://www.raspberrypi.org/documentation/remote-access/ssh/README.md
+
+[Passwordless SSH access]: https://www.raspberrypi.org/documentation/remote-access/ssh/passwordless.md
+
+[Disable password logins]: http://raspberrypi.stackexchange.com/a/1687
+
+[SSH config file]: http://www.tldp.org/LDP/solrhe/Securing-Optimizing-Linux-RH-Edition-v1.3/chap15sec122.html
