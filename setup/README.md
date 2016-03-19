@@ -66,9 +66,9 @@ Go to [Install No-Ip](remote-access/README.md#install-no-ip) in [remote-access](
 
 **References:**
 
-- [Download Jessie Lite](https://www.raspberrypi.org/downloads/raspbian/)
+- [Download Jessie Lite]:[https://www.raspberrypi.org/downloads/raspbian/]
 - Format SD Card
-    - [Linux format SD card](https://www.raspberrypi.org/documentation/installation/installing-images/linux.md)
-    - [Mac Os format SD card](https://www.raspberrypi.org/documentation/installation/installing-images/mac.md).
-    - [Windows format SD card](https://www.raspberrypi.org/documentation/installation/installing-images/windows.md).
-- [Add user to sudoers](http://askubuntu.com/questions/7477/how-can-i-add-a-new-user-as-sudoer-using-the-command-line)
+    - [Linux format SD card]:[https://www.raspberrypi.org/documentation/installation/installing-images/linux.md]
+    - [Mac Os format SD card]:[https://www.raspberrypi.org/documentation/installation/installing-images/mac.md].
+    - [Windows format SD card]:[https://www.raspberrypi.org/documentation/installation/installing-images/windows.md].
+- [Add user to sudoers]:[http://askubuntu.com/questions/7477/how-can-i-add-a-new-user-as-sudoer-using-the-command-line]
