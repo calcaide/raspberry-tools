@@ -47,6 +47,8 @@ Open SSH [config file][SSH config file]:
 
 Find the line `#PasswordAuthentication yes`.
 
+And change it to `PasswordAuthentication no`.
+
 
 ### Install No-Ip
 
