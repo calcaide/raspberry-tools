@@ -27,7 +27,7 @@ For setup a basic environment, should [download the Raspbian Jessie Lite image][
 
 ### Change locale, timezone and keyboard layout
 
-Go to [Localisation](localisation/README.md) section to se how to [change locale](localisation/README.md#change-locale), [chane time zone](localisation/README.md#change-time-zone) or [change keyboard layout](localisation/README.md#change-keyboard-layout).
+Go to [Localisation](../localisation/README.md) section to se how to [change locale](../localisation/README.md#change-locale), [chane time zone](../localisation/README.md#change-time-zone) or [change keyboard layout](../localisation/README.md#change-keyboard-layout).
 
 
 ### Default user
