@@ -53,7 +53,7 @@ Go to [Configure ethernet](../network/README.md#configure-ethernet) in [network 
 
 ### SSH access
 
-Go to [SSH access](../remote-access.md/#ssh-access) in remote access section, also [Passwordless SSH access](../remote-access.md/#ssh-access/#passwordless SSH access).
+Go to [SSH access](../remote-access/README.md/#ssh-access) in remote access section, also [Passwordless SSH access](../remote-access/README.md#passwordless SSH access).
 
 
 ### Install No-Ip
