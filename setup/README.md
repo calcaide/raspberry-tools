@@ -48,17 +48,17 @@ Delete `pi` user:
 
 ### Configure ethernet
 
-Go to [Configure ethernet](network/README.md#configure-ethernet) in [network section](network/README.md).
+Go to [Configure ethernet](../network/README.md#configure-ethernet) in [network section](../network/README.md).
 
 
 ### SSH access
 
-Go to [SSH access](remote-access.md/#ssh-access) in remote access section, also [Passwordless SSH access](remote-access.md/#ssh-access/#passwordless SSH access).
+Go to [SSH access](../remote-access.md/#ssh-access) in remote access section, also [Passwordless SSH access](../remote-access.md/#ssh-access/#passwordless SSH access).
 
 
 ### Install No-Ip
 
-Go to [Install No-Ip](remote-access/README.md#install-no-ip) in [remote-access](remote-access/README.md).
+Go to [Install No-Ip](../remote-access/README.md#install-no-ip) in [remote-access](../remote-access/README.md).
 
 
 
