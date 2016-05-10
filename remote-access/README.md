@@ -3,6 +3,7 @@
 ## Contents
 - [SSH access](#ssh-access).
 - [Passwordless SSH access](#passwordless-ssh-access).
+- [VNC](#vnc).
 - [Install No-Ip](#install-no-ip).
 
 ### SSH access
@@ -33,7 +34,7 @@ Absolutely based in [official documentation][Passwordless SSH access].
 
 The  pattern `<username>@<deviceId>` could be whatever, like "Rpi #1" but I like to use `<username>@<deviceId>`.
 
-Example: `ssh -keygen -t rsa -C`.
+Example: `ssh-keygen -t rsa -C`.
 
 #### Transfer public key from SSH client to SSH server
 
@@ -48,6 +49,24 @@ Open SSH [config file][SSH config file]:
 Find the line `#PasswordAuthentication yes`.
 
 And change it to `PasswordAuthentication no`.
+
+### VNC
+
+Install [TightVNC][TightVNC] (vnc server):
+
+`sudo apt-get install tightvncserver`
+
+Run VNC server:
+
+`tightvncserver`
+
+Start vnc session:
+
+`vncserver :1 -geometry 1280x1024 -depth 24`
+
+Stop vnc session: 
+
+`vncserver -kill :1`
 
 
 ### Install No-Ip
@@ -64,33 +83,53 @@ Download the client and unzip it:
 
 `tar vzxf noip-duc-linux.tar.gz`
 
+Enter installation directory:
+
+`cd noip-2.1.9-1`
+
+*the version could be different, verify first and change it if need it*
+
 Compile and install:
 
-`sudo make`
+`sudo make`  
 `sudo make install`
 
-Auto runs when startup raspberry Pi:
+**Auto runs when startup raspberry Pi (with [systemd][systemd]):**
 
-`sudo nano /etc/init.d/noip2`
+First, create systemd service (I took these [from here][noip.service]):
 
-Basic script:
+`touch /usr/lib/systemd/system/noip.service` *(if the directory `system doesn't exist, create it)*
 
+And looks something like this:
+
+
+```shell
+[Unit]
+Description=No-IP dynamic DNS update client
+After=network.target
+
+[Service]
+Type=forking
+ExecStart=/usr/local/bin/noip2
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
 ```
-#! /bin/bash
-### BEGIN INIT INFO
-# Provides:             noip
-# Required-Start:       $remote_fs $syslog
-# Required-Stop:        $remote_fs $syslog
-# Default-Start:        2 3 4 5
-# Default-Stop:         0 1 6
-### END INIT INFO
 
-sudo /usr/local/bin/noip2
-```
+Then reboot `sudo reboot`.
 
-Add permissions: `sudo chmod +x /etc/init.d/noip2`.
+Check the service status:
 
-Register the script to be run at start-up: `sudo update-rc.d noip2 defaults`.
+`systemctl status noip.service`
+
+Start the service:
+
+`sudo systemctl start noip.service`
+
+Enable service at startup:
+
+`sudo systemctl enable noip.service`
 
 - - -
 
@@ -100,11 +139,11 @@ Register the script to be run at start-up: `sudo update-rc.d noip2 defaults`.
 - [Passwordless SSH access][Passwordless SSH access]
 - [Disable password logins][Disable password logins]
 - [SSH config file][SSH config file]
-- Install No-ip: 
-	- [Post 1](http://raspberrypihelp.net/tutorials/29-raspberry-pi-no-ip-tutorial).
-	- [Post 2](http://www.stuffaboutcode.com/2012/06/raspberry-pi-run-program-at-start-up.html).
-
-
+- [Vnc][vnc]
+- [TightVNC][TightVNC]
+- [Install No-ip][install no-ip]
+- [Systemd][systemd]
+- [Create noip systemd service][noip.service]
 
 
 [SSH access]: https://www.raspberrypi.org/documentation/remote-access/ssh/README.md
@@ -114,3 +153,13 @@ Register the script to be run at start-up: `sudo update-rc.d noip2 defaults`.
 [Disable password logins]: http://raspberrypi.stackexchange.com/a/1687
 
 [SSH config file]: http://www.tldp.org/LDP/solrhe/Securing-Optimizing-Linux-RH-Edition-v1.3/chap15sec122.html
+
+[VNC]: https://www.raspberrypi.org/documentation/remote-access/vnc/README.md
+
+[TightVNC]: http://www.tightvnc.com
+
+[install no-ip]: http://www.noip.com/support/knowledgebase/installing-the-linux-dynamic-update-client/
+
+[systemd]: https://wiki.archlinux.org/index.php/Systemd
+
+[noip.service]: https://www.raspberrypi.org/forums/viewtopic.php?f=53&t=18569
