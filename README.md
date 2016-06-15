@@ -13,5 +13,8 @@ This repository is not a guide, tutorial or something like this for that, alread
 - [Remote access](remote-access/README.md)
     - Setups and tools for access securely to raspbian over the internet.
 
+- [GUI](gui/README.md)
+	- GUI installation.
+
 - [Localisation](localisation/README.md)
     - Change localisation, timezone, keyboard layout and that kind of stuff.
