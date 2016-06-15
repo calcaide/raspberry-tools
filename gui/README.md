@@ -1,6 +1,6 @@
 # GUI
 
-WIP
+Installation of a lightweight GUI, [LXDE][LXDE] in this case and the minimum tools to work.
 
 ## Contents
 - [Foundations tasks](#foundations-tasks).
@@ -45,7 +45,9 @@ Finally, to launch Xorg display server:
 
 [LXAppearance][LXAppearance].
 
-[Install lxde reference][Install lxde reference].
+[Install LXDE reference][Install lxde reference].
+
+[LXDE]: http://lxde.org/index.html
 
 [Xorg]: https://www.x.org/wiki/
 
