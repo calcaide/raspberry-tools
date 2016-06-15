@@ -10,12 +10,14 @@ Once I applied the next configuration, I can manage the raspberry with my laptop
 ## Contents
 
 - [Enviorment](#enviorment).
-- [Change locale, timezone and keyboard layout](#change-locale-timezone-and-keyboard-layout)
+- [Change locale, timezone and keyboard layout](#change-locale-timezone-and-keyboard-layout).
 - [Default user](#default-user).
 - [Configure ethernet](#configure-ethernet).
+- [Update and upgrade](#update-and-upgrade).
 - [SSH access](#ssh-access).
 - [Install No-Ip](#install-no-ip).
-- [Install LXDE GUI]().
+- [Expand file system](#expand-file-system).
+- [Install LXDE GUI](#install-display-server).
 
 
 ### Enviorment
@@ -34,21 +36,37 @@ Go to [Localisation](../localisation/README.md) section to se how to [change loc
 For security and other reasons I like to delete default users, but first I should to add one.
 
 Add new user:
-`sudo adduser <username>`
+`$ sudo adduser <username>`
 
 Add to sudoers:
-`sudo adduser <username> sudo`
+`$ sudo adduser <username> sudo`
 
 Logout the actual session:
-`logout`
+`$ logout`
 
 Delete `pi` user:
-`sudo userdel -r pi`.
+`$ sudo userdel -r pi`.
 
 
 ### Configure ethernet
 
 Go to [Configure ethernet](../network/README.md#configure-ethernet) in [network section](../network/README.md).
+
+### Update and upgrade
+
+Install and update to the latest files and packages, then clean it:
+
+```
+$ sudo apt-get update && apt-get upgrade
+
+$ sudo apt-get dist-upgrade
+
+$ sudo apt-get clean
+```
+
+Then reboot the system:
+
+`$ sudo reboot`.
 
 
 ### SSH access
@@ -60,6 +78,11 @@ Go to [SSH access](../remote-access/README.md/#ssh-access) in remote access sect
 
 Go to [Install No-Ip](../remote-access/README.md#install-no-ip) in [remote-access](../remote-access/README.md).
 
+### Expand file system
+
+It's important to expand the file system through raspi-config:
+
+`$ sudo raspi-config` and then `1 Expand Filesystem`.
 
 
 - - - 
@@ -72,6 +95,7 @@ Go to [Install No-Ip](../remote-access/README.md#install-no-ip) in [remote-acces
 	- [Mac Os format SD card][Mac Os format SD card]
 	- [Windows format SD card][Windows format SD card]
 	- [Add user to sudoers][Add user to sudoers]
+- [Expand file system][Expand]
 
 [Download Jessie lite]: https://www.raspberrypi.org/downloads/raspbian/
 
@@ -82,3 +106,5 @@ Go to [Install No-Ip](../remote-access/README.md#install-no-ip) in [remote-acces
 [Windows format SD card]: https://www.raspberrypi.org/documentation/installation/installing-images/windows.md
 
 [Add user to sudoers]: http://askubuntu.com/questions/7477/how-can-i-add-a-new-user-as-sudoer-using-the-command-line
+
+[Expand]: https://www.raspberrypi.org/documentation/configuration/raspi-config.md
