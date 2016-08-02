@@ -18,11 +18,13 @@ Absolutely based in [official documentation][Passwordless SSH access].
 
 - [Check for existing SSH keys](#check-for-existing-ssh-keys).
 - [Generate SSH keys](#generate-ssh-keys).
-- [Transfer public key from SSH client to SSH server](#transfer-public-key-from-ssh-client-to-ssh-server).
+- Add authorized keys:
+	- [Transfer public key from SSH client to SSH server](#transfer-public-key-from-ssh-client-to-ssh-server).
+	- [Add public key to SSH server (from the server itself)](#add-public-key-to-ssh-server-from-the-server-itself)
 - [Disable password logins](#disable-password-logins).
 
 #### Check for existing SSH keys
-`ls ~/.ssh`
+`$ ls ~/.ssh`
 
 **Remember**
 `id_rsa`: Private.
@@ -30,21 +32,25 @@ Absolutely based in [official documentation][Passwordless SSH access].
 
 #### Generate SSH Keys
 
-`ssh-keygen -t rsa -C <username>@<deviceId>`.
+`$ ssh-keygen -t rsa -C <username>@<deviceId>`.
 
 The  pattern `<username>@<deviceId>` could be whatever, like "Rpi #1" but I like to use `<username>@<deviceId>`.
 
-Example: `ssh-keygen -t rsa -C`.
+Example: `$ ssh-keygen -t rsa -C`.
 
 #### Transfer public key from SSH client to SSH server
 
 Now, from a client machine:
-`cat ~/.ssh/id_rsa.pub | ssh <username>@<IP-ADDRESS> 'cat >> .ssh/authorized_keys`.
+`$ cat ~/.ssh/id_rsa.pub | ssh <username>@<IP-ADDRESS> 'cat >> .ssh/authorized_keys`'.
+
+#### Add public key to SSH server (from the server itself)
+
+`$ echo "<your public key>" >> ~/.ssh/authorized_keys`.
 
 #### Disable password logins
 
 Open SSH [config file][SSH config file]:
-`sudo nano /etc/ssh/sshd_config`.
+`$ sudo nano /etc/ssh/sshd_config`.
 
 Find the line `#PasswordAuthentication yes`.
 
@@ -54,51 +60,51 @@ And change it to `PasswordAuthentication no`.
 
 Install [TightVNC][TightVNC] (vnc server):
 
-`sudo apt-get install tightvncserver`
+`$ sudo apt-get install tightvncserver`
 
 Run VNC server:
 
-`tightvncserver`
+`$ tightvncserver`
 
 Start vnc session:
 
-`vncserver :1 -geometry 1280x1024 -depth 24`
+`$ vncserver :1 -geometry 1024x768 -depth 24`
 
 Stop vnc session: 
 
-`vncserver -kill :1`
+`$ vncserver -kill :1`
 
 
 ### Install No-Ip
 
 Create temporal dir (for installation files):
 
-`mkdir /home/userName/noip`
+`$ mkdir /home/userName/noip`
 
-`cd /home/userName/noip`
+`$ cd /home/userName/noip`
 
 Download the client and unzip it:
 
-`wget https://www.noip.com/client/linux/noip-duc-linux.tar.gz`
+`$ wget https://www.noip.com/client/linux/noip-duc-linux.tar.gz`
 
-`tar vzxf noip-duc-linux.tar.gz`
+`$ tar vzxf noip-duc-linux.tar.gz`
 
 Enter installation directory:
 
-`cd noip-2.1.9-1`
+`$ cd noip-2.1.9-1`
 
 *the version could be different, verify first and change it if need it*
 
 Compile and install:
 
-`sudo make`  
-`sudo make install`
+`$ sudo make`  
+`$ sudo make install`
 
 **Auto runs when startup raspberry Pi (with [systemd][systemd]):**
 
 First, create systemd service (I took these [from here][noip.service]):
 
-`touch /usr/lib/systemd/system/noip.service` *(if the directory `system doesn't exist, create it)*
+`$ touch /usr/lib/systemd/system/noip.service` *(if the directory system doesn't exist, create it)*
 
 And looks something like this:
 
@@ -117,19 +123,19 @@ Restart=on-failure
 WantedBy=multi-user.target
 ```
 
-Then reboot `sudo reboot`.
+Then reboot `$ sudo reboot`.
 
 Check the service status:
 
-`systemctl status noip.service`
+`$ systemctl status noip.service`
 
 Start the service:
 
-`sudo systemctl start noip.service`
+`$ sudo systemctl start noip.service`
 
 Enable service at startup:
 
-`sudo systemctl enable noip.service`
+`$ sudo systemctl enable noip.service`
 
 - - -
 

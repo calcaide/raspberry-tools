@@ -5,6 +5,7 @@ Installation of a lightweight GUI, [LXDE][LXDE] in this case and the minimum too
 ## Contents
 - [Foundations tasks](#foundations-tasks).
 - [Install display server](#install-display-server).
+- [LXDE GUI](#lxde-gui).
 
 ### Foundations tasks
 
@@ -26,7 +27,7 @@ Install [Xinit][Xinit] to launch the Xorg display server from the command line:
 
 Also, install [LXTerminal][LXTerminal] as a terminal and [LXAppearance][LXAppearance] as a theme switcher.
 
-`$ sudo apt-get install lxde-core lxdeterminal lxdeappearance`.
+`$ sudo apt-get install lxde-core lxterminal lxappearance`.
 
 Finally, to launch Xorg display server:
 

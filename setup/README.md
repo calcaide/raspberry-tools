@@ -11,6 +11,7 @@ Once I applied the next configuration, I can manage the raspberry with my laptop
 
 - [Enviorment](#enviorment).
 - [Change locale, timezone and keyboard layout](#change-locale-timezone-and-keyboard-layout).
+- [Change root password](#change-root-password).
 - [Default user](#default-user).
 - [Configure ethernet](#configure-ethernet).
 - [Update and upgrade](#update-and-upgrade).
@@ -32,8 +33,16 @@ For setup a basic environment, should [download the Raspbian Jessie Lite image][
 Go to [Localisation](../localisation/README.md) section to se how to [change locale](../localisation/README.md#change-locale), [chane time zone](../localisation/README.md#change-time-zone) or [change keyboard layout](../localisation/README.md#change-keyboard-layout).
 
 
+### Change root password
+
+`$ sudo passwd root`
+
 ### Default user
-For security and other reasons I like to delete default users, but first I should to add one.
+For security and other reasons I like to delete default user.
+
+Default:
+user: `pi`
+password: `raspberry`
 
 Add new user:
 `$ sudo adduser <username>`
@@ -84,6 +93,10 @@ It's important to expand the file system through raspi-config:
 
 `$ sudo raspi-config` and then `1 Expand Filesystem`.
 
+
+### Install LXDE GUI
+
+Go to [GUI](../gui/README.md) and follow the table of contents.
 
 - - - 
 
