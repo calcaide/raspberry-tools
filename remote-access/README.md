@@ -102,9 +102,9 @@ Compile and install:
 
 **Auto runs when startup raspberry Pi (with [systemd][systemd]):**
 
-First, create systemd service (I took these [from here][noip.service]):
+First, create unitfile for systemd (I took these [from here][noip.service]):
 
-`$ touch /usr/lib/systemd/system/noip.service` *(if the directory system doesn't exist, create it)*
+`$ nano /etc/systemd/system/noip.service`
 
 And looks something like this:
 
