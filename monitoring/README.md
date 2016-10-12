@@ -6,6 +6,8 @@
 
 ### Install Datadog agent
 
+*In case that don't know [Datadog](https://www.datadoghq.com/)*
+
 Update local cache:  
 `$ sudo apt update`
 
