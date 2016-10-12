@@ -16,5 +16,8 @@ This repository is not a guide, tutorial or something like this for that, alread
 - [GUI](gui/README.md)
 	- GUI installation.
 
+- [Monitoring](monitoring/README.md)
+	- Monitoring the raspberry PI with [Datadog](https://www.datadoghq.com/) monitoring service.
+
 - [Localisation](localisation/README.md)
     - Change localisation, timezone, keyboard layout and that kind of stuff.
