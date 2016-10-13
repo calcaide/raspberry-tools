@@ -1,15 +1,16 @@
 # Setup 
 
-This is just for setup the basics to use the Raspberry securely via ssh over the ethernet. 
+This is just for setup the basics to use the Raspberry securely via ssh over the ethernet.
 
-To me, this is the basic configuration because I need a display and a keyboard to do it. 
-Once I applied the next configuration, I can manage the raspberry with my laptop (or other device with a terminal) over the ssh.
+To me, this is the basic configuration because I need a display and a keyboard to do it. Once I applied the configuration, I can manage the raspberry with my laptop (or another device with a terminal) over the ssh.
 
 *Most of these changes can be carried out by the `raspi-config` command.*
 
+
+
 ## Contents
 
-- [Enviorment](#enviorment).
+- [Environment.](#environment).
 - [Change locale, timezone and keyboard layout](#change-locale-timezone-and-keyboard-layout).
 - [Change root password](#change-root-password).
 - [Default user](#default-user).
@@ -21,16 +22,16 @@ Once I applied the next configuration, I can manage the raspberry with my laptop
 - [Install LXDE GUI](#install-display-server).
 
 
-### Enviorment
+### Environment
 
-The enviorment (for now) is based in Raspbian Jessie Lite, then, depending on the purpose, I install some services or others.
+The environment (for now) is based in Raspbian Jessie Lite, then, depending on the purpose, I install some services or others.
 
-For setup a basic environment, should [download the Raspbian Jessie Lite image][Download Jessie Lite] and format the sd card, follow these instructions depending of your host Operating system: [Linux][Linux format SD card], [Mac Os][Mac Os format SD card] or [Windows][Windows format SD card].
+For setup a basic environment, should [download the Raspbian Jessie Lite image][Download Jessie Lite] and format the sd card, follow these instructions depending on your host Operating system: [Linux][Linux format SD card], [Mac Os][Mac Os format SD card] or [Windows][Windows format SD card].
 
 
 ### Change locale, timezone and keyboard layout
 
-Go to [Localisation](../localisation/README.md) section to se how to [change locale](../localisation/README.md#change-locale), [chane time zone](../localisation/README.md#change-time-zone) or [change keyboard layout](../localisation/README.md#change-keyboard-layout).
+Go to [Localisation](../localisation/README.md) section to see how to [change locale](../localisation/README.md#change-locale), [chane time zone](../localisation/README.md#change-time-zone) or [change keyboard layout](../localisation/README.md#change-keyboard-layout).
 
 
 ### Change root password

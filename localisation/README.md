@@ -1,6 +1,6 @@
 # Localisation
 
-All these configuraitons also can be reached through `raspi-config`.
+All these configurations also can be reached through `raspi-config`.
 
 ## Contents
 - [Change locale](#change-locale).

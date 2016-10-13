@@ -8,13 +8,13 @@
 
 ### SSH access
 
-By default the raspberry pi has the SSH server running and listening to the 22 port. Just to make sure that the service is up type: `sudo service ssh status`.
+By default, the raspberry pi has the SSH server running and listening on 22 port. Just to make sure that the service is up type: `sudo service ssh status`.
 
 *If you don't receive a response, type `sudo raspi-config` then navigate to `ssh`, and select `Enable or disable ssh server`.*
 
 
 ### Passwordless SSH access
-Absolutely based in [official documentation][Passwordless SSH access].
+Based in [official documentation][Passwordless SSH access].
 
 - [Check for existing SSH keys](#check-for-existing-ssh-keys).
 - [Generate SSH keys](#generate-ssh-keys).

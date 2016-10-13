@@ -9,7 +9,7 @@ Installation of a lightweight GUI, [LXDE][LXDE] in this case and the minimum too
 
 ### Foundations tasks
 
-First [expand the file system](../setup/README.md/#expand-file-system).
+First, [expand the file system](../setup/README.md/#expand-file-system).
 
 Then, update and [upgrade the system](../setup/README.md/#update-and-upgrade).
 
