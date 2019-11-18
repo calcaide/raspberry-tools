@@ -5,6 +5,7 @@
 - [Passwordless SSH access](#passwordless-ssh-access).
 - [VNC](#vnc).
 - [Install No-Ip](#install-no-ip).
+- [VPN](#vpn).
 
 ### SSH access
 
@@ -136,6 +137,13 @@ Start the service:
 Enable service at startup:
 
 `$ sudo systemctl enable noip.service`
+
+
+### VPN
+
+I use [PiVPN](https://pivpn.io).
+
+`$ curl -L https://install.pivpn.io | bash`
 
 - - -
 
