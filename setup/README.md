@@ -50,7 +50,7 @@ Default:
   - password: `ubuntu`.
 
 Add new user:
-`$ sudo adduser <username> -s /bin/bash -m -G adm, sudo`
+`$ sudo useradd <username> -s /bin/bash -m -G adm, sudo`
 
 To change asking for the password when `$ su` change `/etc/sudoers`:
 
