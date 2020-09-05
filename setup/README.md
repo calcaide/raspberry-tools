@@ -41,33 +41,22 @@ Go to [Localisation](../localisation/README.md) section to see how to [change lo
 ### Default user
 For security and other reasons I like to delete default user.
 
-Default:
-- raspberry Pi OS:
-  - user: `pi`.
-  - password: `raspberry`.
-- Ubuntu server:
-  - user: `ubuntu`.
-  - password: `ubuntu`.
+- user: `pi`.
+- password: `raspberry`.
+
 
 Add new user:
-`$ sudo useradd <username> -s /bin/bash -m -G adm, sudo`
+`$ sudo adduser <username>`
 
-To change asking for the password when `$ su` change `/etc/sudoers`:
-
-- From this: 
-```
-# Allow members of group sudo to execute any command
-%sudo	ALL=(ALL:ALL) ALL
-```
-
-- To this:
-```
-# Allow members of group sudo to execute any command
-%sudo	ALL=(ALL) NOPASSWD: ALL
-```
+Add new user to sudoers
+`$ sudo adduser <username> sudo`
 
 Logout the actual session:
 `$ logout`
+
+To not be prompted for the password when `$ su`:
+1. Create a file using: `$ sudo visudo /etc/sudoers.d/010_<username>-nopasswd`.
+2. Inser the following content in a single line: `bob ALL=(ALL) NOPASSWD: ALL`.
 
 Delete `pi` user:
 `$ sudo userdel -r pi`.
