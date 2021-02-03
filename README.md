@@ -6,6 +6,25 @@ Environment: Ubuntu server 20.04 LTS
 
 ## Security
 
+Some steps to secure the RPI.
+
+### Default user
+
+Ubuntu comes with a default user `ubuntu`. It is recommended to create a different one and deleted.
+
+Create a new user: `$ sudo adduser username`.
+
+Add new user to the sudo group: `$ sudo usermod -aG sudo username`.
+
+Delete default user and its home directory: `$ sudo deluser --remove-home username`.
+
+### Remove telnet
+
+Telnet comes installed by default.
+
+Remove telnet: `$ sudo apt remove telnet`.
+
+
 ### SSH
 
 Change the SSH default 22 port to something else.
@@ -14,12 +33,24 @@ Change the SSH default 22 port to something else.
 
 `$ sudo service sshd restart`.
 
+
 ### Firewall
 
 I will use [Ufw](https://www.linux.com/training-tutorials/introduction-uncomplicated-firewall-ufw/).
 
-
 Install ufw: `$ sudo apt install ufw`.
+
+Allow port for SSH: `$ sudo ufw allow 22`.
+
+Deny any port: `$ sudo ufw deny 22`.
+
+### Fail2Ban
+
+[Fail2Ban](https://www.fail2ban.org/wiki/index.php/Main_Page) website.
+
+Install Fail2Ban: `$ sudo apt install fail2ban`.
+
+Check status: `$ sudo systemctl status fail2ban`.
 
 ## Network
 
