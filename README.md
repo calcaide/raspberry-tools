@@ -4,6 +4,23 @@ This repository is not a guide, tutorial or something like this for that, alread
 
 Environment: Ubuntu server 20.04 LTS
 
+## Security
+
+### SSH
+
+Change the SSH default 22 port to something else.
+
+`$ sudo nano /etc/ssh/sshd_config`.
+
+`$ sudo service sshd restart`.
+
+### Firewall
+
+I will use [Ufw](https://www.linux.com/training-tutorials/introduction-uncomplicated-firewall-ufw/).
+
+
+Install ufw: `$ sudo apt install ufw`.
+
 ## Network
 
 ### Static IP address assignment
